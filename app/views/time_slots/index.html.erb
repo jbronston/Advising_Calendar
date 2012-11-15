@@ -1,0 +1,32 @@
+<h1>Times Available for Online Advisement</h1>
+
+<table>
+ <!-- <tr>
+   <th>Time slot</th>
+   <th>Availability</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr> -->
+
+<% @time_slots.each do |time_slot| %>
+  <tr>
+    <% if time_slot.availability %>
+    <td>AVAILABLE   </ td>
+    <% else %>
+    <td>            </ td>
+    <% end %>
+    
+    <td><%= time_slot.time_slot.strftime("%A") %>
+    <td><%= time_slot.time_slot.strftime("%B %-d") %>
+    <td><%= time_slot.time_slot.strftime("%l:%M %P") %></td>
+    <!--<td><%= link_to 'Show', time_slot %></td>-->
+    <td><%= link_to 'Advise', edit_time_slot_path(time_slot) %></td>
+    <!-- <td><%= link_to 'Destroy', time_slot, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add New Time', new_time_slot_path %>

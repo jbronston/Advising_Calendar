@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time_slot: 2012-11-07 14:32:07
+  availability: false
+
+two:
+  time_slot: 2012-11-07 14:32:07
+  availability: false

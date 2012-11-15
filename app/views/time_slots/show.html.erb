@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time slot:</b>
+  <%= @time_slot.time_slot %>
+</p>
+
+<p>
+  <b>Availability:</b>
+  <%= @time_slot.availability %>
+</p>
+
+
+<%= link_to 'Edit', edit_time_slot_path(@time_slot) %> |
+<%= link_to 'Back', time_slots_path %>

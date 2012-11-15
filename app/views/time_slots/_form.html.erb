@@ -1,0 +1,28 @@
+<%= form_for(@time_slot) do |f| %>
+  <% if @time_slot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@time_slot.errors.count, "error") %> prohibited this time_slot from being saved:</h2>
+
+      <ul>
+      <% @time_slot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% unless @time_slot.time_slot == nil %>
+    <%= @time_slot.time_slot.strftime("%A %B %-d, %l:%M %P") %><br />
+    <% else %>
+    <%= f.datetime_select :time_slot %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :availability %><br />
+    <%= f.check_box :availability %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
